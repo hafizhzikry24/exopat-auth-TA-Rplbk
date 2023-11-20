@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./Main.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+
 
 function Main(props) {
   const [data, setData] = useState([]);
@@ -29,7 +31,7 @@ function Main(props) {
     fetchData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   const renderList = () => {
     return (
@@ -75,6 +77,7 @@ function Main(props) {
       ) : (
         <div className="render">{renderList()}</div>
       )}
+      <Navbar/>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import './Home.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 class Home extends React.Component {
-    handleClick = () =>{
+    // handleClick = () =>{
       
-    }
+    // }
     render() {
         return (
             <div className="container">
@@ -21,7 +22,9 @@ class Home extends React.Component {
                 <div className="container-right">
                     <img src="/iguana.png" alt="exopet"/>
                 </div>
+                <Navbar/>
             </div>
+            
         );
     }
 }

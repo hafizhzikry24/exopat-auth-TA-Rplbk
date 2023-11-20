@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Search.css";
 import { NavLink } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -13,8 +14,7 @@ const Search = () => {
     const doSearch = (e) => {
       axios
         .get(
-          "https://my-json-server.typicode.com/myoktariansyah/exopet-app/exopet?common_name=" +
-            name
+          "https://my-json-server.typicode.com/myoktariansyah/exopet-app/exopet?common_name=" + name
         )
         .then((results) => {
           setData(results.data);
@@ -76,6 +76,7 @@ const Search = () => {
       ) : (
         <div className="search-result">{renderList()}</div>
       )}
+      <Navbar/>
     </div>
   );
 };
